@@ -1,0 +1,851 @@
+:root {
+    --bg: #0b1020;
+    --p: #151c33;
+    --p2: #232c4d;
+    --t: #f6efe4;
+    --m: #aeb6cc;
+    --r: #F45858;
+    --y: #FFD166;
+    --g: #8DD982;
+    --c: #67C9F5;
+    --v: #B8A5F5
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px
+}
+
+body {
+    background: var(--bg);
+    color: var(--t);
+    font: 400 17px/1.6 Inter, sans-serif;
+    overflow-x: hidden
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1
+}
+
+h1,
+h2,
+h3,
+.sg {
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.08
+}
+
+h2 {
+    font-size: clamp(30px, 4vw, 48px);
+    margin-bottom: 12px
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 4px
+}
+
+a {
+    color: var(--c)
+}
+
+p,
+li {
+    color: var(--m)
+}
+
+:focus-visible {
+    outline: 3px solid var(--y);
+    outline-offset: 3px
+}
+
+.w {
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 24px
+}
+
+.sec {
+    padding: 88px 24px
+}
+
+.sub {
+    max-width: 60ch;
+    margin-bottom: 36px
+}
+
+.bar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(11, 16, 32, .85);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--p2)
+}
+
+.bar-in {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    height: 68px
+}
+
+.bar nav {
+    display: flex;
+    gap: 24px;
+    margin-left: auto
+}
+
+.bar nav a {
+    color: var(--t);
+    text-decoration: none;
+    font-weight: 500
+}
+
+.bar nav a:hover {
+    color: var(--y)
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--t);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 19px
+}
+
+.brand img {
+    height: 34px
+}
+
+.btn {
+    display: inline-block;
+    background: var(--r);
+    color: #1a0c0c;
+    font: 700 17px 'Space Grotesk', sans-serif;
+    padding: 14px 26px;
+    border-radius: 14px;
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #a82f35;
+    transition: transform .12s, box-shadow .12s
+}
+
+.btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #a82f35
+}
+
+.btn:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #a82f35
+}
+
+.btn.sm {
+    padding: 9px 18px;
+    font-size: 15px
+}
+
+.btn.ghost {
+    background: var(--p2);
+    color: var(--t);
+    box-shadow: 0 5px 0 #121936
+}
+
+.btn-em {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font: 700 16px 'Space Grotesk', sans-serif;
+    color: var(--t);
+    border: 3px solid transparent;
+    border-radius: 14px;
+    padding: 10px 20px 10px 12px;
+    cursor: pointer;
+    background: linear-gradient(var(--p), var(--p)) padding-box, repeating-linear-gradient(-45deg, var(--y) 0 10px, #111 10px 20px) border-box
+}
+
+.btn-em i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--r);
+    box-shadow: 0 0 0 4px #7d2a33, 0 0 18px var(--r);
+    animation: pulse 1.6s infinite
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 56px;
+    align-items: center;
+    min-height: calc(100vh - 68px);
+    padding-top: 32px;
+    padding-bottom: 48px
+}
+
+h1 {
+    font-size: clamp(46px, 6.4vw, 88px);
+    letter-spacing: -.02em;
+    margin-bottom: 20px;
+    animation: rise .8s both
+}
+
+h1 em {
+    font-style: normal;
+    color: var(--r);
+    display: inline-block;
+    animation: wob 3s 1s infinite
+}
+
+.lede {
+    font-size: 20px;
+    max-width: 46ch;
+    color: var(--t);
+    animation: rise .8s .15s both
+}
+
+.facts {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0;
+    display: grid;
+    gap: 8px;
+    animation: rise .8s .3s both
+}
+
+.facts li {
+    display: flex;
+    gap: 16px
+}
+
+.facts b {
+    width: 64px;
+    color: var(--y);
+    font: 700 16px 'Space Grotesk'
+}
+
+.facts span {
+    color: var(--t)
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    animation: rise .8s .45s both
+}
+
+.cd {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px
+}
+
+.cd div {
+    background: var(--p);
+    border: 2px solid var(--p2);
+    border-radius: 12px;
+    min-width: 76px;
+    padding: 8px 6px;
+    text-align: center
+}
+
+.cd b {
+    display: block;
+    font: 700 28px 'Space Grotesk';
+    color: var(--g)
+}
+
+.cd small {
+    color: var(--m);
+    font-size: 13px
+}
+
+.cd p {
+    padding: 10px 0
+}
+
+.porthole {
+    position: relative;
+    border: 12px solid #2c3556;
+    border-radius: 44px;
+    background: #000;
+    box-shadow: inset 0 0 0 4px #141a30, 0 0 60px rgba(103, 201, 245, .25);
+    aspect-ratio: 4/5
+}
+
+.porthole>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    display: block
+}
+
+.f {
+    position: absolute;
+    width: 74px;
+    height: 82px;
+    filter: drop-shadow(0 8px 12px #0008)
+}
+
+.f1 {
+    left: -52px;
+    top: 12%;
+    animation: fl 6s infinite
+}
+
+.f2 {
+    right: -40px;
+    top: 46%;
+    animation: fl 7s -2s infinite reverse
+}
+
+.f3 {
+    left: 12%;
+    bottom: -36px;
+    animation: fl 8s -4s infinite
+}
+
+.tick {
+    background: var(--y);
+    color: #111;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: rotate(-1deg);
+    margin: 0 -10px;
+    border-block: 3px solid #111
+}
+
+.tick div {
+    display: inline-block;
+    padding: 10px 0;
+    font: 700 18px 'Space Grotesk';
+    animation: mq 30s linear infinite
+}
+
+.tick i {
+    font-style: normal;
+    color: var(--r);
+    margin: 0 18px
+}
+
+.steps,
+.time {
+    list-style: none;
+    padding: 0
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    counter-reset: s
+}
+
+.steps li {
+    background: var(--p);
+    border: 2px solid var(--p2);
+    border-radius: 20px;
+    padding: 28px;
+    counter-increment: s;
+    position: relative;
+    transition: transform .2s, border-color .2s
+}
+
+.steps li:hover {
+    transform: translateY(-6px);
+    border-color: var(--c)
+}
+
+.steps li::after {
+    content: counter(s);
+    position: absolute;
+    right: 22px;
+    top: 16px;
+    font: 700 48px 'Space Grotesk';
+    color: var(--p2)
+}
+
+.steps svg {
+    width: 64px;
+    height: 70px;
+    margin-bottom: 14px
+}
+
+.roles {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 56px;
+    align-items: center
+}
+
+.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px
+}
+
+.two h3 {
+    color: var(--t)
+}
+
+.role {
+    background: var(--p);
+    border: 2px solid var(--p2);
+    border-radius: 24px;
+    padding: 28px;
+    text-align: center
+}
+
+.role-face {
+    min-height: 170px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 6px;
+    margin-bottom: 16px
+}
+
+.role-face svg {
+    width: 90px;
+    height: 100px
+}
+
+.role-face h3 {
+    font-size: 30px
+}
+
+.role-face.pop {
+    animation: pop .5s
+}
+
+.role small {
+    display: block;
+    margin-top: 14px
+}
+
+.time {
+    max-width: 720px;
+    border-left: 4px solid var(--p2)
+}
+
+.time li {
+    display: flex;
+    gap: 24px;
+    padding: 0 0 28px 24px;
+    position: relative
+}
+
+.time li::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 4px solid var(--y)
+}
+
+.time b {
+    font: 700 20px 'Space Grotesk';
+    color: var(--y);
+    min-width: 60px
+}
+
+details {
+    max-width: 760px;
+    background: var(--p);
+    border: 2px solid var(--p2);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    padding: 16px 22px
+}
+
+summary {
+    cursor: pointer;
+    color: var(--t);
+    font: 700 18px 'Space Grotesk'
+}
+
+details[open] {
+    border-color: var(--v)
+}
+
+details p {
+    margin-top: 10px
+}
+
+.join {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 56px;
+    align-items: center
+}
+
+.big {
+    width: 150px;
+    height: 165px;
+    animation: fl 5s infinite;
+    transition: color .3s
+}
+
+form {
+    background: var(--p);
+    border: 2px solid var(--p2);
+    border-radius: 24px;
+    padding: 32px;
+    display: grid;
+    gap: 18px
+}
+
+label,
+legend {
+    font-weight: 600;
+    color: var(--t);
+    display: grid;
+    gap: 6px;
+    font-size: 15px
+}
+
+fieldset {
+    border: 0;
+    padding: 0
+}
+
+input,
+select {
+    background: var(--bg);
+    color: var(--t);
+    border: 2px solid var(--p2);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font: inherit
+}
+
+input:focus,
+select:focus {
+    border-color: var(--c);
+    outline: 0
+}
+
+.sw {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px
+}
+
+.sw label {
+    cursor: pointer;
+    display: block
+}
+
+.sw input {
+    position: absolute;
+    opacity: 0
+}
+
+.sw svg {
+    width: 48px;
+    height: 53px;
+    padding: 4px;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    transition: transform .15s
+}
+
+.sw label:hover svg {
+    transform: scale(1.1) rotate(-6deg)
+}
+
+.sw input:checked+svg {
+    border-color: var(--t);
+    background: var(--p2)
+}
+
+.sw input:focus-visible+svg {
+    outline: 3px solid var(--y)
+}
+
+.note {
+    font-size: 14px
+}
+
+.err {
+    color: var(--r);
+    font-weight: 600;
+    min-height: 1.2em
+}
+
+.ticket {
+    text-align: center;
+    padding: 12px
+}
+
+.ticket svg {
+    width: 90px;
+    height: 100px;
+    animation: fl 4s infinite
+}
+
+.ticket h3 {
+    font-size: 28px;
+    margin: 10px 0
+}
+
+.ticket b {
+    color: var(--g)
+}
+
+footer {
+    border-top: 2px solid var(--p2);
+    padding: 28px 0
+}
+
+.foot {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: var(--m)
+}
+
+.foot a {
+    color: var(--m);
+    text-decoration: none
+}
+
+.meet {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgba(5, 8, 18, .88);
+    display: grid;
+    place-items: center;
+    padding: 20px
+}
+
+.meet[hidden] {
+    display: none
+}
+
+.mb {
+    background: var(--p);
+    border: 3px solid var(--r);
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    animation: pop .35s
+}
+
+.mb h2 {
+    color: var(--r);
+    font-size: 34px
+}
+
+.sus {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 22px 0
+}
+
+.sus button {
+    background: var(--p2);
+    border: 2px solid transparent;
+    border-radius: 14px;
+    color: var(--t);
+    padding: 10px;
+    font: 600 15px Inter;
+    cursor: pointer;
+    display: grid;
+    justify-items: center
+}
+
+.sus button:hover {
+    border-color: var(--y)
+}
+
+.sus svg {
+    width: 48px;
+    height: 53px
+}
+
+.eject {
+    height: 110px;
+    margin-bottom: 12px
+}
+
+.eject svg {
+    width: 80px;
+    height: 88px;
+    animation: ej 2.2s ease-in forwards
+}
+
+.mb .btn {
+    margin-top: 16px
+}
+
+body.flash::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    background: var(--r);
+    animation: fo .9s steps(6) forwards
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(24px)
+    }
+}
+
+@keyframes wob {
+
+    0%,
+    100% {
+        transform: rotate(0)
+    }
+
+    50% {
+        transform: rotate(-4deg) scale(1.04)
+    }
+}
+
+@keyframes fl {
+    50% {
+        transform: translateY(-18px) rotate(8deg)
+    }
+}
+
+@keyframes mq {
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+@keyframes pulse {
+    50% {
+        box-shadow: 0 0 0 8px #7d2a3366, 0 0 28px var(--r)
+    }
+}
+
+@keyframes pop {
+    from {
+        transform: scale(.8);
+        opacity: 0
+    }
+}
+
+@keyframes ej {
+    from {
+        transform: translateX(-120px) rotate(0)
+    }
+
+    to {
+        transform: translateX(560px) rotate(1000deg) scale(.3)
+    }
+}
+
+@keyframes fo {
+
+    0%,
+    40%,
+    80% {
+        opacity: .55
+    }
+
+    20%,
+    60%,
+    100% {
+        opacity: 0
+    }
+}
+
+@media(max-width:900px) {
+    .bar nav {
+        display: none
+    }
+
+    .bar-in {
+        justify-content: space-between
+    }
+
+    .hero,
+    .roles,
+    .join {
+        grid-template-columns: 1fr
+    }
+
+    .hero {
+        min-height: 0
+    }
+
+    .porthole {
+        max-width: 420px;
+        margin: 24px auto;
+        aspect-ratio: 1
+    }
+
+    .steps {
+        grid-template-columns: 1fr
+    }
+
+    .f1 {
+        left: -14px
+    }
+
+    .f2 {
+        right: -10px
+    }
+
+    .sec {
+        padding: 60px 24px
+    }
+}
+
+@media(max-width:480px) {
+    .two {
+        grid-template-columns: 1fr
+    }
+
+    .cd div {
+        min-width: 64px
+    }
+
+    .sus {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    *,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important
+    }
+}

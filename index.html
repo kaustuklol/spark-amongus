@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SPARK × Among Us IRL | Find the impostor</title>
+    <meta name="description"
+        content="SPARK, IIIT Bhopal presents Among Us in real life. Do tasks, call meetings, vote out the impostor.">
+    <meta name="theme-color" content="#0b1020">
+    <link rel="icon" href="assets/among-us-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="cm" viewBox="0 0 60 66">
+            <g stroke="#0a0e1a" stroke-width="3" stroke-linejoin="round">
+                <rect x="3" y="26" width="14" height="24" rx="6" fill="currentColor" />
+                <path d="M12 24a18 20 0 0 1 36 0v28q0 7-7 7h-6v-8h-12v8h-4q-7 0-7-7z" fill="currentColor" />
+                <rect x="22" y="15" width="24" height="16" rx="8" fill="#bfe9ff" />
+            </g>
+            <path d="M27 21h9" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+        </symbol>
+    </svg>
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <header class="bar">
+        <div class="w bar-in">
+            <a class="brand sg" href="#top"><img src="assets/among-us-logo.png" alt="">SPARK × Among Us</a>
+            <nav><a href="#how">How it works</a><a href="#roles">Roles</a><a href="#plan">Schedule</a><a
+                    href="#faq">FAQ</a></nav>
+            <a class="btn sm" href="#join">Join the crew</a>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero w">
+            <div class="hero-copy">
+                <h1>Someone on campus is <em>sus.</em></h1>
+                <p class="lede">SPARK presents Among Us in real life. Finish your tasks, survive the meetings, and vote
+                    out the impostor before they get you.</p>
+                <ul class="facts">
+                    <li><b>When</b><span id="when"></span></li>
+                    <li><b>Where</b><span id="where"></span></li>
+                    <li><b>Who</b><span>Open to students</span></li>
+                </ul>
+                <div class="cta"><a class="btn" href="#join">Join the crew</a><button class="btn-em" id="emBtn"
+                        type="button"><i></i>Call emergency meeting</button></div>
+                <div class="cd" id="cd" aria-label="Countdown to the event"></div>
+            </div>
+            <div class="porthole"><img src="assets/among-us-key-art.webp" alt="Among Us crewmates floating in space">
+                <svg class="f f1" style="color:#F45858">
+                    <use href="#cm" />
+                </svg><svg class="f f2" style="color:#FFD166">
+                    <use href="#cm" />
+                </svg><svg class="f f3" style="color:#8DD982">
+                    <use href="#cm" />
+                </svg>
+            </div>
+        </section>
+
+        <div class="tick" aria-hidden="true">
+            <div>Emergency meeting <i>●</i> Fix the wiring <i>●</i> Trust no one <i>●</i> Vote wisely <i>●</i> Emergency
+                meeting <i>●</i> Fix the wiring <i>●</i> Trust no one <i>●</i> Vote wisely <i>●</i></div>
+        </div>
+
+        <section class="w sec" id="how">
+            <h2>Three phases. One survivor group.</h2>
+            <p class="sub">Every round follows the same loop, just like the game, only now you can't hide behind a
+                screen.</p>
+            <ol class="steps">
+                <li><svg style="color:#67C9F5">
+                        <use href="#cm" />
+                    </svg>
+                    <h3>Suit up</h3>
+                    <p>Check in, get your colour and a task list, and learn the ship layout during the briefing.</p>
+                </li>
+                <li><svg style="color:#FFD166">
+                        <use href="#cm" />
+                    </svg>
+                    <h3>Work the ship</h3>
+                    <p>Complete tasks around campus. Impostors sabotage and eliminate while staying unnoticed.</p>
+                </li>
+                <li><svg style="color:#F45858">
+                        <use href="#cm" />
+                    </svg>
+                    <h3>Call the vote</h3>
+                    <p>Found a body or a suspect? Call a meeting, share what you saw, argue your case, and vote.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="w sec roles" id="roles">
+            <div>
+                <h2>Which side are you on?</h2>
+                <p class="sub">Roles are secret and handed out on the day. Peek at a sample draw below to get in the
+                    mood.</p>
+                <div class="two">
+                    <div>
+                        <h3>Crewmates</h3>
+                        <p>Finish tasks, stay together, and find the impostor.</p>
+                    </div>
+                    <div>
+                        <h3>Impostors</h3>
+                        <p>Blend in, sabotage, and win the room over in every meeting.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="role" id="role">
+                <div class="role-face" id="roleFace"><svg style="color:#B8A5F5">
+                        <use href="#cm" />
+                    </svg>
+                    <p>Draw a sample role</p>
+                </div><button class="btn" id="roleBtn" type="button">Reveal my role</button><small>Just for fun. Real
+                    roles are assigned at the event.</small>
+            </div>
+        </section>
+
+        <section class="w sec" id="plan">
+            <h2>Event day schedule</h2>
+            <p class="sub">Timings are tentative until the organisers confirm them.</p>
+            <ol class="time">
+                <li><b>10:00</b>
+                    <div>
+                        <h3>Check-in and suits</h3>
+                        <p>Pick up your colour and crew ID.</p>
+                    </div>
+                </li>
+                <li><b>10:30</b>
+                    <div>
+                        <h3>Mission briefing</h3>
+                        <p>Rules, safe zones, and meeting points.</p>
+                    </div>
+                </li>
+                <li><b>11:00</b>
+                    <div>
+                        <h3>Round one</h3>
+                        <p>Tasks begin. Watch the doors.</p>
+                    </div>
+                </li>
+                <li><b>13:00</b>
+                    <div>
+                        <h3>Final round</h3>
+                        <p>Fewer crewmates, higher stakes.</p>
+                    </div>
+                </li>
+                <li><b>14:30</b>
+                    <div>
+                        <h3>Final vote and results</h3>
+                        <p>Impostor reveal and prizes.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="w sec" id="faq">
+            <h2>Quick answers</h2>
+            <details>
+                <summary>Do I need to know Among Us?</summary>
+                <p>No. The briefing covers everything you need, and the game is easier to learn by playing.</p>
+            </details>
+            <details>
+                <summary>Can I join with friends?</summary>
+                <p>Yes, register separately and tell us who you'd like to be near. Roles are still random.</p>
+            </details>
+            <details>
+                <summary>What should I bring?</summary>
+                <p>Comfortable shoes, a water bottle, and your student ID.</p>
+            </details>
+            <details>
+                <summary>Who is organising this?</summary>
+                <p>SPARK, the Society for Programming, Automation, Research &amp; Knowledge at IIIT Bhopal. <a
+                        href="https://in.linkedin.com/company/spark-iiitb" target="_blank"
+                        rel="noopener noreferrer">Find us on LinkedIn</a>.</p>
+            </details>
+        </section>
+
+        <section class="w sec join" id="join">
+            <div>
+                <h2>Board the ship</h2>
+                <p class="sub">Pick your suit colour and sign up. Spots are limited, so crew up early.</p><svg
+                    class="big" id="bigCm" style="color:#F45858">
+                    <use href="#cm" />
+                </svg>
+            </div>
+            <form id="f"><label>Name<input name="name" required maxlength="70" autocomplete="name"></label>
+                <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+                <label>Year<select name="year" required>
+                        <option value="">Choose your year</option>
+                        <option>1st year</option>
+                        <option>2nd year</option>
+                        <option>3rd year</option>
+                        <option>4th year</option>
+                        <option>Other</option>
+                    </select></label>
+                <fieldset>
+                    <legend>Suit colour</legend>
+                    <div class="sw" id="sw"></div>
+                </fieldset>
+                <button class="btn" type="submit">Register for the crew</button>
+                <p class="note" id="note"></p>
+                <p class="err" id="err" role="alert"></p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="w foot"><span class="sg">SPARK × Among Us</span><span>IIIT Bhopal</span><a href="#top">Back to
+                top</a></div>
+    </footer>
+    <div class="meet" id="meet" hidden role="dialog" aria-modal="true" aria-label="Emergency meeting">
+        <div class="mb" id="mb"></div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
