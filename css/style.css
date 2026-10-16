@@ -632,6 +632,10 @@ footer {
     text-decoration: none
 }
 
+.foot a:hover{
+    color: var(--y);
+}
+
 .meet {
     position: fixed;
     inset: 0;
